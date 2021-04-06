@@ -1,0 +1,89 @@
+.post-gig-container{
+    height: 150vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4b0082;
+}
+.post-gig{
+    height: 90%;
+    width: 70%;
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+}
+.post-gig-form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.post-gig-fields{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: gray;
+}
+.gig-input{
+    height: 30px;
+    width: 400px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+}
+#subject-select{
+    height: 30px;
+    width: 400px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+.des-input{
+    height: 200px;
+    width: 400px;
+    resize: none;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+}
+#mode{
+    height: 30px;
+    width: 400px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+.submit-gig{
+    height: 50px;
+    width: 400px;
+}
+.submit-gig-btn{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background: #4b0082;
+    color: white;
+    font-size: 18px;
+}
+.post-gig-side-info-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.side-info-items{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: red;
+}

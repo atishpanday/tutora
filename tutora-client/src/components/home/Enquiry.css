@@ -1,0 +1,95 @@
+.enquiry-form-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.enquiry-form-card{
+    width: 60%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 50px darkgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.enquiry-heading-container{
+    width: 70%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.enquiry-heading{
+    font-size: 20px;
+    font-weight: 900;
+    border: 2px solid gray;
+    padding: 10px;
+}
+.enquiry-form{
+    width: 70%;
+    height: 400px;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.enquiry-form-item-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+    height: fit-content;
+}
+.enquiry-form-item-container-one{
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+}
+.enquiry-form-item{
+    width: 100%;
+    background: transparent;
+    height: 30px;
+}
+.enquiry-input{
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    outline: none;
+    word-wrap: break-word;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+.question-input{
+    height: 100px;
+    resize: none;
+}
+.enquiry-submit{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    margin: 40px;
+}
+.enquiry-submit-btn{
+    height: 40px;
+    width: 20%;
+    font-size: 16px;
+    border: none;
+    border-radius: 2px;
+    background: #4B0082;
+    color: white;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.enquiry-submit-btn:hover{
+    background: whitesmoke;
+    color: #4B0082;
+}
