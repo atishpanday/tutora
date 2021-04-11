@@ -8,9 +8,15 @@ import PostGig from "./dashboard/PostGig"
 import TutorsPage from "./tutors/TutorsPage"
 import SearchBar from "./home/SearchBar"
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
+import {ThemeProvider, createMuiTheme} from "@material-ui/core/styles"
 
 export const LoginContext = React.createContext()
 
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [ "Arimo" ].join(","),
+  },
+})
 function App() {
 
 
@@ -35,6 +41,7 @@ function App() {
   })
   return (
     <>
+    <ThemeProvider theme = {theme}>
       <LoginContext.Provider value = {{ loggedIn, setLoggedIn }}>
         <Router>
           <Switch>
@@ -49,6 +56,7 @@ function App() {
           </Switch>
         </Router>
       </LoginContext.Provider >
+      </ThemeProvider>
     </>
   );
 }

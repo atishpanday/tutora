@@ -1,7 +1,10 @@
 import React, { useRef, useState, useContext } from 'react'
-import "./Registration.css"
 import { Link } from "react-router-dom"
 import { LoginContext } from "../App"
+import Card from '../cards/Card'
+import PageContainer from "../pagecontainers/PageContainer"
+import Form from "../forms/Form"
+import Button from "../buttons/Button"
 
 const Registration = () => {
     const nameRef = useRef()
@@ -47,36 +50,97 @@ const Registration = () => {
     }
 
     return (
-        <div className="register-page">
-            <div className="registration-form-container">
-                <div className="registration-type">
+        <PageContainer
+            bgcolor="#4b0082"
+            flexDirection="column">
+            <Card
+                h="500px"
+                w="400px"
+                bgcolor="whitesmoke"
+            >
+                <div 
+                    style = {{
+                        fontSize: "16px",
+                        fontFamily: "Arimo",
+                        color: "#4b0082"
+                    }}>
                     <h1>Register</h1>
                 </div>
                 <div style={{ color: "red" }}>{error && error}</div>
-                <form className="registration-form" onSubmit={registerAcc}>
-                    <div className="registration-form-item-container">
-                        <label className="registration-form-item" for="name">Name</label>
-                        <input required className="registration-form-item registration-input" id="name" type="text" ref={nameRef}></input>
-                    </div>
-                    <div className="registration-form-item-container">
-                        <label className="registration-form-item" for="email">Email</label>
-                        <input required className="registration-form-item registration-input" id="email" type="email" ref={emailRef}></input>
-                    </div>
-                    <div className="registration-form-item-container">
-                        <label className="registration-form-item" for="password">Password</label>
-                        <input required className="registration-form-item registration-input" id="password" type="password" ref={passwordRef}></input>
-                    </div>
-                    <div className="registration-form-item-container">
-                        <label className="registration-form-item" for="confirm-password">Confirm Password</label>
-                        <input required className="registration-form-item registration-input" id="confirm-password" type="password" ref={passwordConfirmRef}></input>
-                    </div>
-                    <button className="registration-btn" type="submit">Register</button>
-                </form>
+                <Form 
+                    h = "300px"
+                    w = "400px"
+                    flexDirection = "column"
+                    onSubmit={registerAcc}>
+                    <input
+                        required
+                        type="text"
+                        style={{
+                            height: "40px",
+                            width: "350px",
+                            padding: "3px",
+                            border: "2px solid lightgray",
+                            borderRadius: "5px"
+                        }}
+                        placeholder="Full name"
+                        ref={nameRef}
+                    />
+                    <input
+                        required
+                        type="email"
+                        style={{
+                            height: "40px",
+                            width: "350px",
+                            padding: "3px",
+                            border: "2px solid lightgray",
+                            borderRadius: "5px"
+                        }}
+                        placeholder="Email"
+                        ref={emailRef}
+                    />
+                    <input
+                        required
+                        type="password"
+                        style={{
+                            height: "40px",
+                            width: "350px",
+                            padding: "3px",
+                            border: "2px solid lightgray",
+                            borderRadius: "5px"
+                        }}
+                        placeholder="Password"
+                        ref={passwordRef}
+                    />
+                    <input
+                        required
+                        type="password"
+                        style={{
+                            height: "40px",
+                            width: "350px",
+                            padding: "3px",
+                            border: "2px solid lightgray",
+                            borderRadius: "5px"
+                        }}
+                        placeholder="Confirm password"
+                        ref={passwordConfirmRef}
+                    />
+                    <Button
+                        h = "35px"
+                        w = "350px"
+                        bgcolor = "green"
+                        border = "none"
+                        borderRadius = "5px"
+                        color = "white"
+                        ftSize = "16px"
+                        >
+                            Register
+                    </Button>
+                </Form>
                 <div className="login-prompt">
-                    <p>Already have an account? <Link to = "/login" style={{ color: "blue", cursor: "pointer", textDecoration: "none" }}>Log in</Link></p>
+                    <p>Already have an account? <Link to="/login" style={{ color: "blue", cursor: "pointer", textDecoration: "none" }}>Log in</Link></p>
                 </div>
-            </div>
-        </div>
+            </Card>
+        </PageContainer>
     )
 }
 

@@ -12,14 +12,14 @@ const authorization = require("../middleware/authorization")
 
 router.post("/register", validation, async (req, res) => {
     try {
-        const { name, email, password, type } = req.body
+        const { name, email, password } = req.body
         const newUser = await pool.query("select * from users where email = $1", [email])
         if (newUser.rows.length !== 0) {
             return res.json({ message: "user already exists" })
         }
         bcrypt.hash(password, 10, async (err, hashedPassword) => {
             if (!err) {
-                await pool.query("insert into users (name, email, password, type) values($1, $2, $3, $4)", [name, email, hashedPassword, type])
+                await pool.query("insert into users (name, email, password) values($1, $2, $3)", [name, email, hashedPassword])
                 const token = jwtGenerator(email)
                 return res.json({ status: "successful", token: token })
             } else {

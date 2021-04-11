@@ -1,8 +1,10 @@
-import React, { useRef, useState, useContext } from 'react'
-import "./Login.css"
+import React, { useState, useContext, useRef } from 'react'
 import { Link } from "react-router-dom"
 import { LoginContext } from "../App"
-
+import Button from "../buttons/Button"
+import Form from "../forms/Form"
+import Card from "../cards/Card"
+import PageContainer from "../pagecontainers/PageContainer"
 
 const Login = () => {
     const emailRef = useRef()
@@ -36,28 +38,71 @@ const Login = () => {
         }
     }
     return (
-        <div className="login-page">
-            <div className="login-form-container">
-                <div className="login-heading">
+        <PageContainer
+            bgcolor = "#4b0082"
+            flexDirection = "column">
+            <Card
+                h = "500px"
+                w = "400px"
+                bgcolor = "whitesmoke">
+                <div
+                    style = {{
+                        fontFamily: "Arimo",
+                        fontSize: "16px",
+                        color: "#4b0082"
+                    }}>
                     <h1>Log in</h1>
                 </div>
                 <div style={{ color: "red" }}>{error && error}</div>
-                <form className="login-form" onSubmit={sendLoginRequest}>
-                    <div className="login-form-item-container">
-                        <label className="login-form-item" for="email">Email</label>
-                        <input required className="login-form-item login-input" id="email" type="email" ref={emailRef}></input>
-                    </div>
-                    <div className="login-form-item-container">
-                        <label className="login-form-item" for="password">Password</label>
-                        <input required className="login-form-item login-input" id="password" type="password" ref={passwordRef}></input>
-                    </div>
-                    <button className="login-btn" type="submit">Log in</button>
-                </form>
+                <Form 
+                    h = "200px"
+                    w = "400px"
+                    flexDirection = "column"
+                    onSubmit={sendLoginRequest}>
+                    <input
+                        required
+                        type="email"
+                        style={{
+                            height: "40px",
+                            width: "350px",
+                            padding: "3px",
+                            border: "2px solid lightgray",
+                            borderRadius: "5px"
+                        }}
+                        placeholder="Email"
+                        ref={emailRef}
+                    />
+                    <input
+                        required
+                        type="password"
+                        style={{
+                            height: "40px",
+                            width: "350px",
+                            padding: "3px",
+                            border: "2px solid lightgray",
+                            borderRadius: "5px"
+                        }}
+                        placeholder="Password"
+                        ref={passwordRef}
+                    />
+                    <Button
+                        type="submit"
+                        bgcolor="green"
+                        h="35px"
+                        w="350px"
+                        border = "none"
+                        borderRadius = "5px"
+                        color="white"
+                        ftSize="16px"
+                        text="Log in">
+                            Log in
+                    </Button>
+                </Form>
                 <div className="signup-prompt">
-                    <p>Don't have an account? Register as <Link to="/register/student" style={{ textDecoration: "none", color: "blue", cursor: "pointer" }}>Student</Link> or as <Link to="/register/teacher" style={{ textDecoration: "none", color: "blue", cursor: "pointer" }}>Teacher</Link></p>
+                    <p>Don't have an account? Register <Link to="/register" style={{ textDecoration: "none", color: "blue", cursor: "pointer" }}>here</Link></p>
                 </div>
-            </div>
-        </div>
+            </Card>
+        </PageContainer>
     )
 }
 

@@ -38,22 +38,19 @@
 .link div{
     margin-right: 3px;
     font-size: 14px;
-    font-weight: 900;
 }
 .link:hover{
     /* background: #FE5B5B; */
-    background: #e6ecf8;
+    background: rgba(230, 236, 248, 0.5);
 }
 .nav-login-btn{
     height: 30px;
     width: 90px;
-    background: green;
-    border: none;
-    border-radius: 15px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
     color: whitesmoke;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 900;
     transition: 0.4s all;
     outline: none;
 }
