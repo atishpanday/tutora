@@ -6,7 +6,7 @@
     width: 100%;
     align-items: center;
     justify-content: space-evenly;
-    background: #4B0082;
+    background: rgba(75, 0, 130, 0.8);
 }
 .nav-bar{
     display: flex;

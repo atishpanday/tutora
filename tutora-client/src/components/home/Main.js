@@ -10,7 +10,7 @@ const Main = () => {
             <div
                 className="main"
                 style={{
-                    height: "180px",
+                    height: "200px",
                     width: "fit-content",
                     display: "flex",
                     flexDirection: "column",
@@ -21,26 +21,26 @@ const Main = () => {
                 <h1
                     className="welcome-heading"
                     style={{
-                        letterSpacing: "4px",
-                        fontSize: "62px",
+                        letterSpacing: "8px",
+                        fontSize: "100px",
                         color: "black",
                     }}>
-                    Welcome to <span
+                    {/* <span
                         style={{
                             color: "red",
                             background: "white",
                             padding: "0 10px",
                             borderRadius: "5px",
                             WebkitTextStrokeWidth: "0",
-                        }}>
-                        tutora
-                        </span>
+                        }}> */}
+                            Welcome
+                        {/* </span> */}
                 </h1>
                 <p
                     style={{
                         fontSize: "18px"
                     }}
-                    className="welcome-para">Better smart than sorry.
+                    className="welcome-para">The best UI designs for your website!
                 </p>
                 <Button
                     h="50px"
@@ -48,6 +48,7 @@ const Main = () => {
                     border="2px solid #4b0082"
                     borderRadius="5px"
                     bgcolor="transparent"
+                    ftSize = "16px"
                 >
                     <div
                         style={{

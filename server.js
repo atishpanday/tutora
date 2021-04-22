@@ -4,13 +4,19 @@ const server = express()
 
 const pool = require("./db")
 
-server.use(express.json())
-
 const cors = require("cors")
+
+const multer = require("multer")
+
+const port = 5000
+
+server.use(express.json())
 
 server.use(cors())
 
-const port = 5000
+const upload = multer({
+    dest: "./uploads/"
+})
 
 server.use("/auth", require("./routes/AuthRoutes"))
 
@@ -26,6 +32,14 @@ server.post("/enquiry", async (req, res) => {
     } catch (error) {
         console.log(error.message)
     }
+})
+
+server.post("/store-image", upload.single("image"), (req, res) => {
+    res.json({message: "received"})
+})
+
+server.get("/get-image", (req, res) => {
+    res.json({image: images[0]})
 })
 
 server.listen(port, () => {
